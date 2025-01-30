@@ -1,19 +1,44 @@
 import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
+import { motion } from "motion/react";
 
-const Works = ({isDark}) => {
+const Works = ({ isDark }) => {
   return (
-    <div id="works" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-ovo">My portfolio</h4>
-      <h2 className="text-center text-5xl font-ovo">My latest works</h2>
-      <p className="mb-12  text-center mt-5 mx-auto max-w-2xl font-ovo">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      id="works"
+      className="w-full px-[12%] py-10 scroll-mt-20"
+    >
+      <motion.h4
+      initial={{ opacity: 0,y:-20 }}
+      whileInView={{ opacity: 1,y:0 }}
+      transition={{ duration: 0.5,delay:0.3 }}
+      className="text-center mb-2 text-lg font-ovo">My portfolio</motion.h4>
+      <motion.h2
+      initial={{ opacity: 0,y:-20 }}
+      whileInView={{ opacity: 1,y:0 }}
+      transition={{ duration: 0.5,delay:0.5 }}
+      className="text-center text-5xl font-ovo">My latest works</motion.h2>
+      <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.7 }}
+      className="mb-12  text-center mt-5 mx-auto max-w-2xl font-ovo">
         Welcome to my web development portfolio. Explore a collection of my
         latest projects, showcasing my skills and expertise in frontend web
         development.
-      </p>
-      <div className="grid grid-cols-auto my-10 gap-5 dark:text-black">
+      </motion.p>
+      <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.9, delay: 0.6 }}
+      className="grid grid-cols-auto my-10 gap-5 dark:text-black">
         {workData.map((project, index) => (
-          <div
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
             key={index}
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor group"
             style={{ backgroundImage: `url(${project.bgImage})` }}
@@ -27,13 +52,24 @@ const Works = ({isDark}) => {
                 <Image src={assets.send_icon} alt="send-icon" className="w-5" />
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-        <a href="" className="w-max flex items-center justify-between gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">
-            Show more <Image src={isDark ? assets.right_arrow_bold_dark : assets.right_arrow} alt="icon" className='w-4'/>
-        </a>
-    </div>
+      </motion.div>
+      <motion.a
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.1, delay: 0.5 }}
+        href=""
+        className="w-max flex items-center justify-between gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
+      >
+        Show more{" "}
+        <Image
+          src={isDark ? assets.right_arrow_bold_dark : assets.right_arrow}
+          alt="icon"
+          className="w-4"
+        />
+      </motion.a>
+    </motion.div>
   );
 };
 
