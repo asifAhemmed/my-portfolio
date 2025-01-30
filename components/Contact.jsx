@@ -38,11 +38,12 @@ const Contact = () => {
       </p>
       <form onSubmit={onSubmit} className="max-w-2xl mx-auto" action="">
         <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
-            <input className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white" type="text" name="name" id="name" placeholder="Enter your name" required/>
-            <input className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white" type="email" name="email" id="email" placeholder="Enter your email" required/>
+            <input className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90" type="text" name="name" id="name" placeholder="Enter your name" required/>
+            <input className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90" type="email" name="email" id="email" placeholder="Enter your email" required/>
         </div>
-        <textarea className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"  rows={6} name="message" id="message" placeholder="Enter your message" required></textarea>
-        <button type="submit" className="px-8 py-3 w-max flex items-center justify-center gap-2 text-white bg-black/80 mx-auto rounded-full hover:bg-black duration-500" >Submit now</button>
+        <textarea className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"  rows={6} name="message" id="message" placeholder="Enter your message" required></textarea>
+        <button type="submit" className="px-8 py-3 w-max flex items-center justify-center gap-2 text-white bg-black/80 mx-auto rounded-full hover:bg-black duration-500
+        dark:bg-transparent  dark:border-[0.5px] dark:hover:bg-darkHover" >Submit now</button>
       </form>
       <p className="text-center mt-10">{result}</p>
     </div>

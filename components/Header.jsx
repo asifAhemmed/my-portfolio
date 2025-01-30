@@ -12,8 +12,8 @@ const Header = () => {
             <h1 className="text-3xl sm:text-6xl lg:text-[66px] font-ovo">frontend web developer based in Bangladesh</h1>
             <p className="mx-w-2xl mx-auto font-ovo">I'm a frontend web developer with a passion for creating visually stunning and user-friendly websites.</p>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                <a className="px-10 py-3 bg-black text-white rounded-full flex items-center gap-2" href="#contact">contact me <Image src={assets.right_arrow_white} alt="icon" className='w-4'/></a>
-                <a href="/sample.pdf" download className="px-10 py-3 border border-gray-500 rounded-full flex items-center gap-2">my resume <Image src={assets.download_icon} alt="icon" className='w-4'/></a>
+                <a className="px-10 py-3 bg-black text-white rounded-full flex items-center gap-2 dark:bg-transparent border border-white" href="#contact">contact me <Image src={assets.right_arrow_white} alt="icon" className='w-4'/></a>
+                <a href="/sample.pdf" download className="px-10 py-3 border border-gray-500 rounded-full bg-white flex items-center gap-2 dark:text-black">my resume <Image src={assets.download_icon} alt="icon" className='w-4'/></a>
             </div>
         </div>
     );
